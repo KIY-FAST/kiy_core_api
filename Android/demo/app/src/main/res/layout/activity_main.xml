@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="15dp"
+        android:scrollbars="vertical"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@id/ll"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <Button
+                    android:id="@+id/findDevBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查找设备" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/devPath1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入设备路径1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/devPath2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入设备路径2"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/getVersionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取KIY版本号" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/getDeviceIDBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取设备ID" />
+
+                <Button
+                    android:id="@+id/getDeviceIDHashBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取设备ID Hash" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/getDeviceTypeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取设备类型" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/getHIDBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取HID" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/getNameBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取名称" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入名称"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/setNameBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置名称" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/isDevInitBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BTC根秘钥是否初始化" />
+
+                <include layout="@layout/line" />
+
+
+                <Button
+                    android:id="@+id/initDevBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="初始化BTC根秘钥" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:text="123456"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入登录密码"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/loginBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登录设备" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/logoutBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="登出设备" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/oldPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入旧密码"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/newPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入新密码"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/changePINBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修改KIY PIN码" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/sign_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入address"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1 2 3 4 5 6 7 8 9 0"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/sign_hash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:digits="0123456789abcdefABCDEF"
+                    android:hint="请输入hash"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="0101010101020202020203030303030404040404050505050506060606060707"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/signBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="私钥签名" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verify_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入address"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1 2 3 4 5 6 7 8 9 0"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verify_hash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:digits="0123456789abcdefABCDEF"
+                    android:hint="请输入hash"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="0101010101020202020203030303030404040404050505050506060606060707"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verify_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:digits="0123456789abcdefABCDEF"
+                    android:hint="请输入签名值"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/verifyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="公钥验证" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/getPubKey_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+
+                    android:hint="请输入公钥类型"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/getPubKey_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入address"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1 2 3 4 5 6 7 8 9 0"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/getPubKeyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取公钥" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/sign_ed25519_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入address"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1 2 3 4 5 6 7 8 9 0"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/sign_ed25519_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入msg"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Hello ED25519!"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/signED25519Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ED25519私钥签名" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verify_ed25519_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入address"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1 2 3 4 5 6 7 8 9 0"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verify_ed25519_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入hash"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Hello ED25519!"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/verify_ed25519_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:digits="0123456789abcdefABCDEF"
+                    android:hint="请输入签名值"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/verifyED25519Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ED25519公钥验证" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/getPubKey_ED25519_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入address"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="1 2 3 4 5 6 7 8 9 0"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/getPubKeyED25519Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ED25519获取公钥" />
+
+                <include layout="@layout/line" />
+                <Button
+                    android:id="@+id/getRandomBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="获取随机数" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/export_root_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:digits="0123456789abcdefABCDEF"
+                    android:hint="请输入随机数"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/exportRootKeyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导出根密钥" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/import_root_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:digits="0123456789abcdefABCDEF"
+                    android:hint="请输入根密钥密文数据"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/importRootKeyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="导入根密钥" />
+
+                <include layout="@layout/line" />
+
+                <Button
+                    android:id="@+id/copyBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拷贝" />
+
+                <include layout="@layout/line" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/reload_pin_newPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="请输入新密码"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="111111"
+                    android:imeOptions="actionDone" />
+
+                <Button
+                    android:id="@+id/reloadPINBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重载PIN码" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清除日志"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info" />
+</androidx.constraintlayout.widget.ConstraintLayout>
